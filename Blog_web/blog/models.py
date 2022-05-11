@@ -15,11 +15,11 @@ class Post(models.Model):
         ordering = ['-dateadded']
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post,related_name='comments', on_delete=models.CASCADE)
-    name = models.CharField(max_length=250)
+    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
     email = models.EmailField()
     body = models.TextField()
     dateadded = models.DateTimeField(auto_now_add=True)
-    
+
     class Meta:
-        ordering = ['-dateadded']
+        ordering = ['dateadded']
